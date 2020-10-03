@@ -5,7 +5,7 @@ https://w-storage.tistory.com/30
 
 1.데이터 수집
 -------------------------
-데이터는 크롤링을 할 수도 있으나 크롤링 된 데이터를 다시 가공해야 하는 과정이 필요 하기에 kaggle에서 데이터셋을 활용했다.
+데이터는 크롤링을 할 수도 있으나 크롤링 된 데이터를 다시 가공해야 하는 과정이 필요 하기에 kaggle데이터셋을 활용했다.
 www.kaggle.com/elangojoseph/face-detection 
 
 2.전처리
