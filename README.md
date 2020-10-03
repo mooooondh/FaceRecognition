@@ -1,6 +1,6 @@
 CNN으로 남성, 여성 구분하기
 =============
-자세한 내용은 블로그에서 확인하실 수 있습니다.
+자세한 내용은 블로그에서 확인하실 수 있습니다.</br>
 https://w-storage.tistory.com/30
 
 1.데이터 수집
@@ -10,7 +10,7 @@ www.kaggle.com/elangojoseph/face-detection
 
 2.전처리
 -------------------------
-이미지를 남자, 여자로 구분하고 잘못된 데이터를 제거한 뒤 이미지 크기를 60*60px로 수정했다.
+이미지를 남자, 여자로 구분하고 잘못된 데이터를 제거한 뒤 이미지 크기를 60x60px로 수정했다.</br>
 이후 데이터를 numpy array 형태로 사용했다.
 
 3.신경망 구축
@@ -19,8 +19,8 @@ www.kaggle.com/elangojoseph/face-detection
 
 4.학습결과
 -------------------------
-epoch= 30 으로 수행 결과
-loss: 0.1617,  accuracy: 0.9450
+epoch= 30 으로 수행 결과</br>
+loss: 0.1617,  accuracy: 0.9450</br>
 <img src= "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbfq7XD%2FbtqJWq98sPP%2FVdPtObeO0yiJSysyhKjvQK%2Fimg.png"></img>
 
 test set 학습 결과 약 90.5%의 정확도를 가졌다.
