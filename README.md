@@ -23,7 +23,7 @@ epoch= 30 으로 수행 결과</br>
 loss: 0.1617,  accuracy: 0.9450</br>
 <img src= "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbfq7XD%2FbtqJWq98sPP%2FVdPtObeO0yiJSysyhKjvQK%2Fimg.png"></img>
 
-test set 학습 결과 약 90.5%의 정확도를 가졌다.
+test set을 사용해 정확도를 측정해본 결과 약 90.5%의 정확도를 가졌다.
 
 5.아쉬운 점, 더 해봐야 할 것들
 -----------
