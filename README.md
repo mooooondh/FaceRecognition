@@ -30,26 +30,30 @@ test set을 사용해 정확도를 측정해본 결과 약 90.5%의 정확도를
 -------------------------
 1번</br>
 > <img src= "https://user-images.githubusercontent.com/25631105/95016953-56219c80-0691-11eb-9dbe-00972f155a8b.jpg"></img></br>
-> 예측: 여성</br>
+> 예측: 여성 97.3%</br>
 > 정답: 여성</br>
 
 2번</br>
 > <img src= "https://user-images.githubusercontent.com/25631105/95016955-5752c980-0691-11eb-93e0-98e2d79e3dbb.jpg"></img></br>
-> 예측: 여성</br>
+> 예측: 여성 99.1%</br>
 > 정답: 여성</br>
 
 3번</br>
 > <img src= "https://user-images.githubusercontent.com/25631105/95016956-57eb6000-0691-11eb-840c-7d99cad07648.jpg"></img></br>
-> 예측: 남성</br>
+> 예측: 남성 96.1%</br>
 > 정답: 남성</br>
 
 4번</br>
 > <img src= "https://user-images.githubusercontent.com/25631105/95016957-57eb6000-0691-11eb-878d-5c0b6ff8d003.jpg"></img></br>
-> 예측: 여성</br>
+> 예측: 여성 79.9%</br>
 > 정답: 남성</br>
 
 일부러 중성적인 이미지, 헷갈리는 이미지로 고른 1, 3번은 정확하게 구분했는데 4번은 틀렸다.</br>
-왜 하필 여기서 틀렸는지는 조금 살펴봐야 할 것 같다.</br>
+여러 가설을 세워본 결과 train데이터와 차이가 있기 때문에 잘못된 출력이 나온것으로 추측했다.</br>
+입력데이터를 아래처럼 수정하니 정답을 출력했다.</br>
+> <img src= "https://user-images.githubusercontent.com/25631105/95019062-49577580-069e-11eb-9acb-22f0ba933086.jpg"></img></br>
+> 예측: 남성 95.5%</br>
+> 정답: 남성</br>
 
 6.아쉬운 점, 더 해봐야 할 것들
 -----------
