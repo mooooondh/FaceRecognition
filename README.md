@@ -11,6 +11,7 @@ www.kaggle.com/elangojoseph/face-detection
 2.전처리
 -------------------------
 이미지를 남자, 여자로 구분하고 잘못된 데이터를 제거한 뒤 이미지 크기를 60x60px로 수정했다.</br>
+남성 100장, 여성 100장은 test set으로 분류했다. </br>
 이후 데이터를 numpy array 형태로 사용했다.
 
 3.신경망 구축
