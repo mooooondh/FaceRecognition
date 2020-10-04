@@ -27,18 +27,22 @@ test set을 사용해 정확도를 측정해본 결과 약 90.5%의 정확도를
 
 5.간단한 테스트
 -------------------------
+1번</br>
 > <img src= "https://user-images.githubusercontent.com/25631105/95016953-56219c80-0691-11eb-9dbe-00972f155a8b.jpg"></img></br>
 > 예측: 여성</br>
 > 정답: 여성</br>
 
+2번</br>
 > <img src= "https://user-images.githubusercontent.com/25631105/95016955-5752c980-0691-11eb-93e0-98e2d79e3dbb.jpg"></img></br>
 > 예측: 여성</br>
 > 정답: 여성</br>
 
+3번</br>
 > <img src= "https://user-images.githubusercontent.com/25631105/95016956-57eb6000-0691-11eb-840c-7d99cad07648.jpg"></img></br>
 > 예측: 남성</br>
 > 정답: 남성</br>
 
+4번</br>
 > <img src= "https://user-images.githubusercontent.com/25631105/95016957-57eb6000-0691-11eb-878d-5c0b6ff8d003.jpg"></img></br>
 > 예측: 여성</br>
 > 정답: 남성</br>
