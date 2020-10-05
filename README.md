@@ -22,10 +22,10 @@ www.kaggle.com/elangojoseph/face-detection
 4.학습결과
 -------------------------
 epoch= 30 으로 수행 결과</br>
-loss: 0.1617,  accuracy: 0.9450</br>
-<img src= "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbfq7XD%2FbtqJWq98sPP%2FVdPtObeO0yiJSysyhKjvQK%2Fimg.png"></img>
+마지막 epoch에서 loss: 0.1617,  accuracy: 0.9450</br>
+<img src= "https://user-images.githubusercontent.com/25631105/95103642-d28aad00-076f-11eb-9d99-f6002536936f.png"></img>
 
-test set을 사용해 정확도를 측정해본 결과 약 90.5%의 정확도를 가졌다.
+test set을 이용한 검증한 정확도: 95.0%
 
 5.간단한 테스트
 -------------------------
@@ -61,4 +61,5 @@ test set을 사용해 정확도를 측정해본 결과 약 90.5%의 정확도를
 * 딥러닝의 단점 중 하나로 꼽히는 많은 하이퍼 파라미터가 고민이다. 어떤 값을 수정해야 정확도를 높일 수 있는지는 시행착오를 거쳐야 할 것 같다.
 * GPU를 이용한 학습을 하기 위해 하루종일 인터넷을 뒤져봤는데 자꾸 오류만 나왔다. GPU를 이용하면 더 깊은 NN, 더 많은 epoch, 더 큰 이미지를 이용해 학습할 수 있을것 같다. GPU를 정상적으로 사용하는 방법을 더 찾아봐야 할 것 같다.
 * 본 프로젝트는 단순히 얼굴을 이용한 남성, 여성만을 분류했으나 이를 확장하여 얼굴의 장신구(안경, 귀걸이 등...)을 찾아내거나 표정분석, 동영상 등에서 실시간 얼굴 인식 등 다양하게 확장할 수 있을 것 같다.
+* 동일한 조건에서 학습을 처음부터 다시 수행하면 loss, accuracy, test set의 정확도가 바뀐다. "그렇다면 이 중 가장 좋은 결과를 출력하는 신경망을 저장하고 사용하는것이 옳은것인가?"를 고민해봐야 할 것 같다.
 
