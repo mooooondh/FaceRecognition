@@ -1,20 +1,34 @@
-import { useEffect } from "react";
-import "./App.css";
-
+import React from "react";
+import { useState, useEffect } from "react";
 function App() {
+  // state
+  const [data, setData] = useState([{}]);
+
   useEffect(() => {
-    fetch("http:127.0.0.1:5000/users")
-      .then(
-        // response 객체의 json() 이용하여 json 데이터를 객체로 변화
-        res => res.json()
-      )
-      .then(
-        // 데이터를 콘솔에 출력
-        data => console.log(data)
-      );
+    fetch("/api/users")
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        // 받아온 데이터를 data 변수에 update
+        setData(data);
+      })
+      .catch(err => console.log(`err : ${err}`));
   }, []);
 
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <h1>test 하는 중...</h1>
+      <div>
+        {/* 삼항연산자 */}
+        {typeof data.users === "undefined" ? (
+          // fetch가 완료되지 않았을 경우에 대한 처리
+          <p>loding...</p>
+        ) : (
+          data.users.map(u => <p>{u.name}</p>)
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default App;
