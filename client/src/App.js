@@ -2,12 +2,15 @@ import React from "react";
 import { useState, useRef } from "react";
 import "./styles/app.css";
 import Spinner from "./images/Spinner.gif";
+import axios from "axios";
 
 function App() {
   const [loading, setLoading] = useState(false);
   const [resultState, setResultState] = useState(false);
   const [imgReady, setImgReady] = useState(false);
   const [imgFile, setImgFile] = useState("");
+  const [gender, setGender] = useState("");
+  const [accuracy, setAccuracy] = useState("");
   const imgRef = useRef();
 
   const saveImgFile = () => {
@@ -24,10 +27,32 @@ function App() {
   const analyze = async () => {
     setLoading(true);
     // TODO 백엔드 완성시 통신
-    setTimeout(() => {
-      setLoading(false);
+    const formData = new FormData();
+    formData.append("file", imgFile);
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/image",
+        formData,
+        {
+          headers: {
+            "Content-Type": `multipart/form-data: `,
+          },
+        }
+      );
+      const result = response.data;
+      console.log(result);
+      setGender(result.gender);
+      setAccuracy(result.acc);
       setResultState(true);
-    }, 3000);
+    } catch (e) {
+      console.log("api오류 : " + e);
+    } finally {
+      setLoading(false);
+    }
+    // setTimeout(() => {
+    //   setLoading(false);
+    //   setResultState(true);
+    // }, 3000);
   };
   return (
     <div className="App">
@@ -56,8 +81,8 @@ function App() {
         <div className="BoxDiv">
           {resultState ? (
             <div className="Result">
-              <p>정답 : 남성</p>
-              <p>정확도 : 80.8%</p>
+              <p>정답 : {gender}</p>
+              <p>정확도 : {accuracy}</p>
             </div>
           ) : null}
           {imgReady ? <img src={imgFile} alt="이미지"></img> : null}
