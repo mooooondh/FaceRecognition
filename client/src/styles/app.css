@@ -1,0 +1,72 @@
+p {
+  margin: 8px 0px;
+}
+
+.BoxDiv {
+  width: 480px;
+  height: 480px;
+  border: 1px solid black;
+}
+
+.MainDiv {
+  margin: 40px 0px;
+  text-align: -webkit-center;
+}
+
+.customInput {
+  display: none;
+}
+
+.inputButton,
+button {
+  padding: 6px 25px;
+  background-color: #ff6600;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+button {
+  margin-top: 8px;
+  border: none;
+}
+
+img {
+  max-width: 480px;
+  max-height: 480px;
+}
+
+.Loading {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #ffffffb7;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Description {
+  text-align: center;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+.Result {
+  position: absolute;
+  width: 480px;
+  background-color: rgba(0, 0, 0, 0.1);
+  animation: fadeInDown 1.5s;
+}
