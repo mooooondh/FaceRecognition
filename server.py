@@ -28,7 +28,7 @@ def image():
     if request.method == 'POST':
         f = request.files['file']
         # return f.filename
-        f.save(secure_filename(f.filename))
+        f.save('./webimage/'+ secure_filename(f.filename))
         return 'file 이 저장되었습니다.'
     
     else :
@@ -41,18 +41,17 @@ def learn_model() :
     # print("model", model)
     a = np.array([0,1,2,3,4])
     print(a)
-    target = os.listdir("./웹이미지")
-    # for file in target:
-    #     img_data = load_img("./웹이미지/" + file)
-    #     print(img_data)
-    #     # img_data = Image.open("./웹이미지/" + file)
-    #     # img_data.show()
-    #     # img_black = img_data.convert("L")
-    #     # img_black.show()
-    #     # img = img_black.resize((48
-    #     # 0,480))
-    #     img_arr= img_to_array(img_data)/255
-    #     print(img_arr.size)
+    target = os.listdir("./webimage")
+    for file in target:
+        img_data = load_img("./webimage/" + file)
+        print(img_data)
+        # img_data = Image.open("./웹이미지/" + file)
+        # img_data.show()
+        # img_black = img_data.convert("L")
+        # img_black.show()
+        img = img_black.resize((480,480))
+        img_arr= img_to_array(img_data)/255
+        print(img_arr.size)
 
     #     img= img_arr.reshape((1,)+ img_arr.shape)
     #     print(img.size)
