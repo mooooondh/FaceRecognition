@@ -25,19 +25,23 @@ def users():
 @app.route('/api/image', methods = ['POST', "GET"])
 def image():
     
-    # learn_model()
     if request.method == 'POST':
+        print("POST")
+        # print(request.form.get('file'))
         f = request.files['file']
         # return f.filename
-        print(f)
+        # print(f)
         f.save('./webimage/'+ secure_filename(f.filename))
-        return 'file 이 저장되었습니다.'
+        res = learn_model(f.filename)
+        return res
+        # return 'file 이 저장되었습니다.'
     
     else :
         return render_template('file.html')
 
 # KakaoTalk_20221013_155231096_01.jpg
-def learn_model() :
+def learn_model(name) :
+    print("사진 이름 : " + name)
     target_img=0
     model = load_model('girl_boy_predict_epoch40.h5')
     # print("model", model)
@@ -45,17 +49,21 @@ def learn_model() :
     print(a)
     target = os.listdir("./webimage")
     for file in target:
+        if(file != name):continue
         print("file : " + file)
         img_data = load_img("./webimage/" + file)
-        print(img_data)
+        print(img_data.size)
         img_data = Image.open("./webimage/" + file)
         # img_data.show()
-        img_black = img_data.convert("L")
+        # img_black = img_data.convert("L")
         # img_black.show()
-        img = img_black.resize((480,480))
+        img = img_data.resize((480,480))
         # img.show()
         
-        img_arr= img_to_array(img_data)/255
+        print(img.size)
+        img_arr= img_to_array(img)/255
+
+        # img_arr= img_to_array(img_data)/255
         # print(img_arr.size)
 
         img= img_arr.reshape((1,)+ img_arr.shape)
@@ -75,7 +83,8 @@ def learn_model() :
     Y_test1 = Y_test.argmax(axis=-1)
     
     print(Y_test1)
-
+    return {"res": { "gender" : "male", "acc" : "50.0%" }
+    					}
 if __name__ == "__main__":
     app.run(debug = True)
 
