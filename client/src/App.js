@@ -30,15 +30,11 @@ function App() {
     const formData = new FormData();
     formData.append("file", imgFile);
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/image",
-        formData,
-        {
-          headers: {
-            "Content-Type": `multipart/form-data: `,
-          },
-        }
-      );
+      const response = await axios.post("/api/image", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       const result = response.data;
       console.log(result);
       setGender(result.gender);
