@@ -36,8 +36,8 @@ function App() {
       });
       const result = response.data;
       console.log(result);
-      setGender(result.gender);
-      setAccuracy(result.acc);
+      setGender(result.res.gender);
+      setAccuracy(result.res.acc);
       setResultState(true);
     } catch (e) {
       console.log("api오류 : " + e);
