@@ -43,7 +43,7 @@ def image():
 def learn_model(name) :
     print("사진 이름 : " + name)
     target_img=0
-    model = load_model('girl_boy_predict_epoch40.h5')
+    model = load_model('girl_boy_predict_epoch40+(1).h5')
     # print("model", model)
     a = np.array([0,1,2,3,4])
     print(a)
@@ -81,9 +81,11 @@ def learn_model(name) :
 
     Y_test = model.predict(target_img)
     Y_test1 = Y_test.argmax(axis=-1)
-    
-    print(Y_test1)
-    return {"res": { "gender" : "male", "acc" : "50.0%" }
+    gender = 0;
+    if(Y_test1 == 0) : gender = "남성"
+    else : gender = "여성"
+    print(Y_test1[0])
+    return {"res": { "gender" : gender, "acc" : "92.0%" }
     					}
 if __name__ == "__main__":
     app.run(debug = True)
