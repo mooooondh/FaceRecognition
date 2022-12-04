@@ -26,9 +26,8 @@ function App() {
 
   const analyze = async () => {
     setLoading(true);
-    // TODO 백엔드 완성시 통신
     const formData = new FormData();
-    formData.append("file", imgFile);
+    formData.append("file", imgRef.current.files[0]);
     try {
       const response = await axios.post("/api/image", formData, {
         headers: {
@@ -37,18 +36,14 @@ function App() {
       });
       const result = response.data;
       console.log(result);
-      setGender(result.gender);
-      setAccuracy(result.acc);
+      setGender(result.res.gender);
+      setAccuracy(result.res.acc);
       setResultState(true);
     } catch (e) {
       console.log("api오류 : " + e);
     } finally {
       setLoading(false);
     }
-    // setTimeout(() => {
-    //   setLoading(false);
-    //   setResultState(true);
-    // }, 3000);
   };
   return (
     <div className="App">
