@@ -70,3 +70,7 @@ img {
   background-color: rgba(0, 0, 0, 0.5);
   animation: fadeInDown 1.5s;
 }
+
+.ResultText {
+  color: beige;
+}
