@@ -25,26 +25,25 @@ function App() {
   };
 
   const analyze = async () => {
-    // setLoading(true);
-    // const formData = new FormData();
-    // formData.append("file", imgRef.current.files[0]);
-    // try {
-    //   const response = await axios.post("/api/image", formData, {
-    //     headers: {
-    //       "Content-Type": "multipart/form-data",
-    //     },
-    //   });
-    //   const result = response.data;
-    //   console.log(result);
-    //   setGender(result.res.gender);
-    //   setAccuracy(result.res.acc);
-    //   setResultState(true);
-    // } catch (e) {
-    //   console.log("api오류 : " + e);
-    // } finally {
-    //   setLoading(false);
-    // }
-    setResultState(true);
+    setLoading(true);
+    const formData = new FormData();
+    formData.append("file", imgRef.current.files[0]);
+    try {
+      const response = await axios.post("/api/image", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      const result = response.data;
+      console.log(result);
+      setGender(result.res.gender);
+      setAccuracy(result.res.acc);
+      setResultState(true);
+    } catch (e) {
+      console.log("api오류 : " + e);
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <div className="App">
