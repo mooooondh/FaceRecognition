@@ -72,8 +72,8 @@ function App() {
         <div className="BoxDiv">
           {resultState ? (
             <div className="Result">
-              <p>정답 : {gender}</p>
-              <p>정확도 : {accuracy}</p>
+              <p className="ResultText">정답 : {gender}</p>
+              <p className="ResultText">정확도 : {accuracy}</p>
             </div>
           ) : null}
           {imgReady ? <img src={imgFile} alt="이미지"></img> : null}
